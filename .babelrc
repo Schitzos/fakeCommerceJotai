@@ -1,0 +1,27 @@
+{
+    "presets": ["module:metro-react-native-babel-preset"],
+    
+    "plugins": [
+      ["module:react-native-dotenv"],
+      ["react-native-reanimated/plugin"],
+      [
+        "module-resolver",
+        {
+          "root": ["./"],
+          "alias": {
+            "@": "./src",
+            "@assets": "./assets",
+            "@components": "./src/components",
+            "@context": "./src/context",
+            "@fragments": "./src/fragments",
+            "@navigation/*": ["./src/navigation/*"],
+            "@services": "./src/services",
+            "@types": "./src/types",
+            "@utils": "./src/utils",
+            "@hooks": "./src/hooks"
+          }
+        }
+      ]
+    ]
+}
+  
