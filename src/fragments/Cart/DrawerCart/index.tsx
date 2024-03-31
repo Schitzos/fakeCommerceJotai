@@ -6,16 +6,13 @@ import CartItemView from '../CartItemView';
 import ButtonView from '@/components/Button';
 import {styles} from './styles';
 import {useCart} from '@/hooks/useCart';
-import {cartState} from '@/atoms/cartState';
-import {useRecoilValue} from 'recoil';
 
 type DrawerNavigationProps = {
   navigation: DrawerNavigationHelpers;
 };
 
 export default function DrawerCart({navigation}: DrawerNavigationProps) {
-  const {updateCart, selectCart, clearCart} = useCart();
-  const cart = useRecoilValue(cartState);
+  const {cart, updateCart, selectCart, clearCart} = useCart();
   const handleCounter = (val: number, id: number) => {
     updateCart(val, id);
   };

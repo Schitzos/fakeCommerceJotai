@@ -4,16 +4,15 @@ import React, {memo} from 'react';
 import {ScrollView, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {styles} from './styles';
-import {useRecoilValue, useSetRecoilState} from 'recoil';
-import {counterState} from '@/atoms/counterState';
+import {counterAtom} from '@/atoms/counterAtom';
+import {useAtom} from 'jotai';
 
 type ProductDetailProps = {
   data: any;
 };
 
 export function ProductDetail({data}: ProductDetailProps) {
-  const count = useRecoilValue(counterState);
-  const setCount = useSetRecoilState(counterState);
+  const [count, setCount] = useAtom(counterAtom);
 
   console.log('render product detail');
   return (

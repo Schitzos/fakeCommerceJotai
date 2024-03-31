@@ -22,7 +22,7 @@ export default function Home({navigation}: HomeScreenProps) {
   const product = productList.data as ProductItemProps[];
   return (
     <View style={styles.container}>
-      <HeaderNavigation title="Fake Commerce Recoil" rightSection={Cart} />
+      <HeaderNavigation title="Fake Commerce Jotai" rightSection={Cart} />
       <Product
         data={product}
         isLoading={productList.isFetching}
